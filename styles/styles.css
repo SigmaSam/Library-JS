@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 
-.btn {
-  background-color: white;
+.card {
+  background-color: white
 }
 
 @tailwind utilities;

@@ -34,3 +34,6 @@ addBookToLibrary(hpThree);
 
 console.log(allBooks(myLibrary))
 
+const library = document.createElement('div');
+document.getElementsByTagName('body')[0].appendChild(library);
+library.classList.add('flex', 'flex-row', 'min-h-full');
