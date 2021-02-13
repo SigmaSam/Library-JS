@@ -2,7 +2,7 @@
 @tailwind components;
 
 .card {
-  background-color: white
+  background-color: white;
 }
 
 @tailwind utilities;
