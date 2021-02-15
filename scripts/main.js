@@ -50,6 +50,8 @@ function display(library) {
   })
 }
 
+
+
 const csDestyled = new Book('Computer Science Destiled', 'Wladston Ferreira Filho', 165, true);
 const hpOne = new Book('Harry Potter and The Philosopher Stone', 'JK Rowlling', 150, true);
 const hpTwo = new Book('Harry Potter and The Chamber of Secrets', 'JK Rowlling', 250, true);
@@ -86,3 +88,15 @@ window.onclick = function(event) {
   }
 }
 
+const addBtn = document.querySelector('#addB');
+btn.addEventListener('click', addNewBook());
+
+function addNewBook() {
+  let title = document.getElementById('title')
+  let author = document.getElementById('title')
+  let pages = document.getElementById('title')
+  let read = document.getElementById('title')
+  let book = new Book(title, author, pages, read);
+  addBookToLibrary(book);
+  display(myLibrary);
+}
