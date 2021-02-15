@@ -28,11 +28,12 @@ function display(library) {
   library.forEach(element => {
     const container = document.querySelector('section');
     const card = document.createElement('div');
-    card.className = 'card mt-5 rounded shadow-md flex flex-col items-center';
+    card.className = 'card mt-5 rounded shadow-md flex flex-col items-center mx-auto';
     const title = document.createElement('h1');
     title.className = 'bg-gray-900 rounded-t text-white text-center font-bold w-full border-b-2 border-white';
     title.textContent = element.title;
     const img = document.createElement('img');
+    img.className = 'w-full h-1/2 border-black border-b-2'
     img.src = 'https://picsum.photos/100/100?random1'
     const author = document.createElement('p');
     author.textContent = element.author;    
@@ -66,3 +67,21 @@ document.getElementsByTagName('body')[0].appendChild(library);
 library.classList.add('flex', 'flex-row', 'min-h-full');
 
 display(myLibrary)
+
+let modal = document.getElementById('modal');
+let btn = document.getElementById('btn');
+let span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
