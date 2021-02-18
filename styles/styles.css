@@ -2,7 +2,9 @@
 @tailwind base;
 @tailwind components;
 
-
+.card {
+  max-height: 37vh;
+}
 
 .noscroll:-webkit-scrollbar {
   display: none;
