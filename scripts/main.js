@@ -23,7 +23,6 @@ if (localStorage.getItem('myLibrary')) {
 }
 
 function addBookToLibrary(newBook) {
-  // if (myLibrary.some((book) => book.title === newBook.title)) return false;
   myLibrary.push(newBook);
   saveLocal();
 }
@@ -57,7 +56,7 @@ function display(library) {
     const btnContainer = document.createElement('div');
     btnContainer.className = 'flex';
     const markAs = document.createElement('button');
-    markAs.textContent = 'Readed?';
+    markAs.textContent = 'read';
     markAs.className = 'px-2 py-1 border border-black rounded bg-green-500';
     const del = document.createElement('button');
     del.textContent = 'Delete';
@@ -96,29 +95,36 @@ function display(library) {
 const modal = document.getElementById('modal');
 const btn = document.getElementById('btn');
 const span = document.getElementsByClassName('close')[0];
-/*eslint-disable */
-btn.onclick = function () {
+
+btn.addEventListener('click', () => {
   modal.style.display = 'block';
-};
+});
 
-span.onclick = function () {
+span.addEventListener('click', () => {
   modal.style.display = 'none';
-};
+});
 
-window.onclick = function (event) {
+function win(event) {
   if (event.target === modal) {
     modal.style.display = 'none';
   }
-};
-/* eslint-enable */
+}
+
+window.addEventListener('click', win);
+
+function swap(read) {
+  if (read === true) {
+    return 'Read';
+  }
+  return 'Not read';
+}
 
 function addNewBook() {
   const inputs = document.getElementsByTagName('input');
   const title = inputs[0].value;
   const author = inputs[1].value;
   const pages = inputs[2].value;
-  let read = inputs[3].checked;
-  read ? read = 'Read' : read = 'Not Read'; // eslint-disable-line no-unused-expressions
+  const read = swap(inputs[3].checked);
   const book = new Book(title, author, pages, read);
   addBookToLibrary(book);
 }
