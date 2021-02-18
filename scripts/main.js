@@ -1,5 +1,4 @@
 
-// Book Class
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -9,14 +8,9 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-// Local Storage
-
 function saveLocal() {
   localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
 }
-
-// Book Array
-
 
 if (localStorage.getItem('myLibrary')) {
   myLibrary = JSON.parse(localStorage.getItem('myLibrary'));
@@ -32,8 +26,6 @@ function removeFromLibrary(bookTitle) {
   saveLocal();
   window.location.reload();
 }
-
-// Books grid.
 
 function display(library) {
   library.forEach(element => {
@@ -89,8 +81,6 @@ function display(library) {
     markAs.addEventListener('click', change);
   });
 }
-
-// Modal functions.
 
 const modal = document.getElementById('modal');
 const btn = document.getElementById('btn');
