@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">    
+    <script src="https://kit.fontawesome.com/68c9428c25.js" crossorigin="anonymous">
+    </script>
+    <title>Libary</title>
+</head>
+<body class="font-sans overflow-hidden h-screen" >
+    <nav class="bg-gray-900 py-3 flex justify-between items-center">
+        <i class="fas fa-book-reader fa-2x text-white px-4"></i>
+        <div class="">            
+            <button class="bg-white px-4 py-1 m-2 rounded font-bold" id="btn">Add a New Book</button>
+            <button class="bg-white px-4 py-1 m-2 mt-2 rounded font-bold">Favorite Books</button>
+        </div>
+    </nav>
+    <div class="hidden fixed z-10 inset-0  overflow-auto bg-black bg-opacity-20 w-full h-full" id="modal">
+        <form class="border-black bg-white flex flex-col items-center mx-auto mt-52 p-15 w-3/5 rounded border border-gray-500">
+            <label class="font-bold" for="title">Title</label>
+            <input class="border rounded border-black" type="text" id="title" name="title">
+            <label class="font-bold"  for="author">Author</label>
+            <input class="border rounded border-black" type="text" id="author" name="author">
+            <label class="font-bold"    for="pages">Pages</label>
+            <input class="border rounded border-black" type="number" id="pages" name="pages">
+            <label class="font-bold"  for="read">Read</label>
+            <input class="border rounded border-black" type="checkbox" id="read" name="read" value='true'>
+            <div class="flex justify-around">
+                <button class="bg-green-500 border border-black rounded px-4 py-1 m-2 mt-2" type="submit" id="addB">
+                    Add Book
+                </button>
+                <span class="close bg-white px-4 py-1 m-2 mt-2 rounded border border-black">Cancel</span>
+            </div>
+        </form>
+        
+    </div>  
+    <section class="noscroll container rounded mt-5 mx-auto px-10 bg-gray-300 h-4/5 grid grid-cols-4 grid-rows-auto gap-2 justify-around shadow-md overflow-scroll">
+        
+    </section>
+    
+  
+
+
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>

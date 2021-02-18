@@ -1,0 +1,28 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+
+.card {
+  max-height: 37vh;
+}
+
+.noscroll:-webkit-scrollbar {
+  display: none;
+}
+
+.noscroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card {
+  background-color: white;
+}
+
+.book-cover {
+  width: 100%;
+  height: 40%;
+}
+
+
+@tailwind utilities;
