@@ -1,17 +1,26 @@
+/* stylelint-disable */
 @tailwind base;
 @tailwind components;
 
+
+
+.noscroll:-webkit-scrollbar {
+  display: none;
+}
+
+.noscroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .card {
-  background-color:white;
-  max-height: 37vh;
-  max-width: 30vh
+  background-color: white;
 }
 
 .book-cover {
   width: 100%;
   height: 40%;
 }
-
 
 
 @tailwind utilities;
