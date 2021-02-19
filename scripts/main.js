@@ -1,12 +1,9 @@
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
+const bookFactory = (title, author, pages, read) => ({
+  title, author, pages, read,
+});
 
 function saveLocal() {
   localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
@@ -48,7 +45,7 @@ function display(library) {
     const btnContainer = document.createElement('div');
     btnContainer.className = 'flex';
     const markAs = document.createElement('button');
-    markAs.textContent = 'read';
+    markAs.textContent = 'Read';
     markAs.className = 'px-2 py-1 border border-black rounded bg-green-500';
     const del = document.createElement('button');
     del.textContent = 'Delete';
@@ -115,7 +112,7 @@ function addNewBook() {
   const author = inputs[1].value;
   const pages = inputs[2].value;
   const read = swap(inputs[3].checked);
-  const book = new Book(title, author, pages, read);
+  const book = bookFactory(title, author, pages, read);
   addBookToLibrary(book);
 }
 
