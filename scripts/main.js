@@ -1,9 +1,16 @@
 
 let myLibrary = [];
 
-const bookFactory = (title, author, pages, read) => ({
-  title, author, pages, read,
-});
+class Book {
+  
+constructor(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages =  pages;
+  this.read = read;
+}
+
+};
 
 function saveLocal() {
   localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
@@ -112,7 +119,7 @@ function addNewBook() {
   const author = inputs[1].value;
   const pages = inputs[2].value;
   const read = swap(inputs[3].checked);
-  const book = bookFactory(title, author, pages, read);
+  const book = new Book(title, author, pages, read);
   addBookToLibrary(book);
 }
 
